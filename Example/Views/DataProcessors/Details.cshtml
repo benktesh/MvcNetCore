@@ -1,0 +1,57 @@
+﻿@model Example.ViewModel.DataProcessorEditViewModel
+@{
+    ViewBag.Title = "Create";
+}
+@section Scripts
+    {
+    <script>
+        jQuery(document).ready(function ($) {
+            $('#add-contact').on('click', function () {
+                jQuery.get('/DataProcessors/AddContact').done(function (html) {
+                    console.log(html);
+                    $('#contact-list').append(html);
+                });
+            });
+
+            $(document).on('click', ".contact-remove", function() {
+                $(this).parent().parent().parent().remove();  
+            });
+        });
+    </script>
+}
+@using (Html.BeginForm())
+{
+    <h2>Data Processor</h2>
+    <hr />
+
+    <div>
+        
+        <div class="row">
+            
+            <div class="col-md-4">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Name):
+                    @Html.DisplayFor(model => model.Name)
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.WebSite):
+                    @Html.DisplayFor(model => model.WebSite)
+                </div>
+            </div>
+        </div>
+       
+    </div>
+    <hr />
+    
+    <div>
+   
+        @Html.Partial("_ContactListDisplay", Model.Contacts)
+    </div>
+
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.ID" class="btn btn-primary">Edit</a> 
+        <a asp-action="Index" class="btn btn-default">Cancel</a>
+    </div>
+}

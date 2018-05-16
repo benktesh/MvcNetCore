@@ -1,0 +1,70 @@
+﻿@model Example.ViewModel.ContactEditViewModel
+@{
+
+    Layout = null;
+}
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="btn-group pull-right">
+                <a href="#" class="btn btn-default btn-xs contact-remove"><span class="glyphicon glyphicon-trash"></span>Remove</a>
+            </div>
+            <div class="panel-title">Contact</div>
+        </div>
+        <input type="hidden" asp-for="@Model.Id" name="Contacts[@Model.Index].Id" id="Contacts[@Model.Index].Id" />
+        <div class="panel-body">
+            <input type="hidden" name="Contacts.Index" value="@Model.Index" />
+            
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="@Model.ContactName"></label>
+                    <input asp-for="@Model.ContactName" name="Contacts[@Model.Index].ContactName" id="Contacts[@Model.Index].ContactName" type="text" class="form-control"/>
+                    <span class="text-danger field-validation-error" data-valmsg-replace="true" data-valmsg-for="@String.Format("Contacts[{0}].ContactName", Model.Index)"> </span>
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="@Model.Title" class="control-label" name="Contacts[@Model.Index].Title" id="Contacts[@Model.Index].Title"></label>
+                    <input asp-for="@Model.Title" name="Contacts[@Model.Index].Title" type="text" id="Contacts[@Model.Index].Title" class="form-control" />
+                    <span asp-validation-for="@Model.Title" class="text-danger" name="Contacts[@Model.Index].Title" id="Contacts[@Model.Index].Title"></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="@Model.Phone" class="control-label" name="Contacts[@Model.Index].Phone" id="Contacts[@Model.Index].Phone"></label>
+                    <input asp-for="@Model.Phone" name="Contacts[@Model.Index].Phone" type="text" id="Contacts[@Model.Index].Phone" class="form-control" />
+                    <span asp-validation-for="@Model.Phone" class="text-danger" name="Contacts[@Model.Index].Phone" id="Contacts[@Model.Index].Phone"></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+
+                    <label asp-for="@Model.Email" class="control-label" name="Contacts[@Model.Index].Email" id="Contacts[@Model.Index].Email"></label>
+                    <input asp-for="@Model.Email" name="Contacts[@Model.Index].Email" type="text" id="Contacts[@Model.Index].Email" class="form-control" />
+                    <span class="text-danger field-validation-error" data-valmsg-replace="true" data-valmsg-for="@String.Format("Contacts[{0}].Email", Model.Index)"> </span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="@Model.ContactType" class="control-label" name="Contacts[@Model.Index].ContactType" id="Contacts[@Model.Index].ContactType"></label>
+                    <select asp-for="@Model.ContactType" asp-items="Html.GetEnumSelectList<ContactType>()" name="Contacts[@Model.Index].Email" type="text" id="Contacts[@Model.Index].ContactType" class="form-control"><option selected="selected" value="">Please select contact type</option></select>
+                    <span asp-validation-for="@Model.ContactType" class="text-danger" name="Contacts[@Model.Index].ContactType" id="Contacts[@Model.Index].ContactType"></span>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="@Model.StartDate" class="control-label"></label>
+                    <input asp-for="@Model.StartDate" name="Contacts[@Model.Index].StartDate" type="text" id="Contacts[@Model.Index].StartDate" class="form-control" />
+                    <span asp-validation-for="@Model.StartDate" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,116 @@
+﻿@model Example.ViewModel.DataProcessorEditViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+@section Scripts
+{
+
+    <script src="~/js/dataProcessor.js"></script>
+}
+
+<h2>Edit Data Processor</h2>
+
+
+<hr />
+<form asp-action="Edit">
+    <div class="row">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="ID" />
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="WebSite" class="control-label"></label>
+                <input asp-for="WebSite" class="form-control" />
+                <span asp-validation-for="WebSite" class="text-danger"></span>
+            </div>
+        </div>
+
+    </div>
+    <div class="">
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Contacts
+                    <div class="btn-group pull-right">
+                        <a href="#" class="btn btn-default btn-xs" id="add-contact"><span class="glyphicon glyphicon-plus-sign"></span>Add contact</a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div id="contact-list">
+
+                        @for (int i = 0; i < Model.Contacts.Count; i++)
+                        {
+                            @*<div class="panel-group" id="Panel.@Model.Contacts[i].Index">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <div class="btn-group pull-right">
+                                            <a href="#" class="btn btn-default btn-xs contact-remove"><span class="glyphicon glyphicon-trash"></span>Remove</a>
+                                        </div>
+                                        <div class="panel-title">Contact</div>
+                                    </div>
+                                    <input type="hidden" asp-for="@Model.Contacts[i].Id" name="Contacts[@Model.Contacts[i].Index].Id" id="Contacts[@Model.Contacts[i].Index].Id"/>
+                                    <div class="panel-body">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <input type="hidden" name="Contacts.Index" value="@Model.Contacts[i].Index" />
+                                                <label asp-for="@Model.Contacts[i].Name" name="Contacts[@Model.Contacts[i].Index].Name" type="text" id="Contacts[@Model.Contacts[i].Index].Name"></label>
+                                                <input asp-for="@Model.Contacts[i].Name" name="Contacts[@Model.Contacts[i].Index].Name" type="text" id="Contacts[@Model.Contacts[i].Index].Name" class="form-control" />
+                                                <span asp-validation-for="@Model.Contacts[i].Name" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label asp-for="@Model.Contacts[i].Title" class="control-label"></label>
+                                                <input asp-for="@Model.Contacts[i].Title" name="Contacts[@Model.Contacts[i].Index].Title" type="text" id="Contacts[@Model.Contacts[i].Index].Title" class="form-control" />
+                                                <span asp-validation-for="@Model.Contacts[i].Title" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label asp-for="@Model.Contacts[i].Phone" class="control-label"></label>
+                                                <input asp-for="@Model.Contacts[i].Phone" name="Contacts[@Model.Contacts[i].Index].Phone" type="text" id="Contacts[@Model.Contacts[i].Index].Phone" class="form-control" />
+                                                <span asp-validation-for="@Model.Contacts[i].Phone" class="text-danger"></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label asp-for="@Model.Contacts[i].Email" class="control-label"></label>
+                                                <input asp-for="@Model.Contacts[i].Email" name="Contacts[@Model.Contacts[i].Index].Email" type="text" id="Contacts[@Model.Contacts[i].Index].Email" class="form-control" />
+                                                <span asp-validation-for="@Model.Contacts[i].Email" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>*@
+
+                            @Html.Partial( "AddContact", Model.Contacts[i])
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-default">Cancel</a>
+    </div>
+
+
+</form>
+
+
+
+

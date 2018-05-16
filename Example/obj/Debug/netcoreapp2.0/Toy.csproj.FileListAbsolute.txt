@@ -1,0 +1,11 @@
+c:\users\bsl2966\Source\Repos\Toy\Toy\bin\Debug\netcoreapp2.0\Toy.deps.json
+c:\users\bsl2966\Source\Repos\Toy\Toy\bin\Debug\netcoreapp2.0\Toy.runtimeconfig.json
+c:\users\bsl2966\Source\Repos\Toy\Toy\bin\Debug\netcoreapp2.0\Toy.runtimeconfig.dev.json
+c:\users\bsl2966\Source\Repos\Toy\Toy\bin\Debug\netcoreapp2.0\Toy.dll
+c:\users\bsl2966\Source\Repos\Toy\Toy\bin\Debug\netcoreapp2.0\Toy.pdb
+c:\users\bsl2966\Source\Repos\Toy\Toy\obj\Debug\netcoreapp2.0\Toy.csproj.CoreCompileInputs.cache
+c:\users\bsl2966\Source\Repos\Toy\Toy\obj\Debug\netcoreapp2.0\Toy.AssemblyInfoInputs.cache
+c:\users\bsl2966\Source\Repos\Toy\Toy\obj\Debug\netcoreapp2.0\Toy.AssemblyInfo.cs
+c:\users\bsl2966\Source\Repos\Toy\Toy\obj\Debug\netcoreapp2.0\Toy.dll
+c:\users\bsl2966\Source\Repos\Toy\Toy\obj\Debug\netcoreapp2.0\Toy.pdb
+C:\Users\bsl2966\Source\Repos\Toy\Toy\obj\Debug\netcoreapp2.0\Toy.csprojResolveAssemblyReference.cache

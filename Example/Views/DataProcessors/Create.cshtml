@@ -1,0 +1,38 @@
+﻿@model Example.ViewModel.DataProcessorEditViewModel
+@{
+    ViewBag.Title = "Create";
+}
+@section Scripts
+   {
+
+    <script src="~/js/dataProcessor.js"></script>
+}
+
+@using (Html.BeginForm())
+{
+    <h2>Create Data Processor</h2>
+
+    @Html.EditorFor(x => x)
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Contacts
+                <div class="btn-group pull-right">
+                    <a href="#" class="btn btn-default btn-xs" id="add-contact"><span class="glyphicon glyphicon-plus-sign"></span>Add contact</a>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div id="contact-list">
+
+                    @for (int i = 0; i < Model.Contacts.Count; i++)
+                    {
+                        @Html.Partial( "AddContact", Model.Contacts[i])
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="submit" value="Save" />
+    <a asp-action="Index" class="btn btn-default">Cancel</a>
+
+}
