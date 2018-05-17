@@ -30,7 +30,6 @@ namespace Example
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddTransient<IDataProcessorManager, DataProcessorManager>();
-            services.AddAuthentication(IISDefaults.AuthenticationScheme);
             services.AddAutoMapper();
       
             services.AddMvc();

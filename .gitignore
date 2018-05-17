@@ -1,2 +1,5 @@
 /.vs/*/v15/Server/sqlite3/*.*
 /*/bin/*
+*/obj/*
+/Example/obj/Debug/netcoreapp2.0/Example.dll
+/Example/obj/Debug/netcoreapp2.0/Example.pdb

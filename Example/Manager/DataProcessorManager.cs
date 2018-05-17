@@ -95,7 +95,7 @@ namespace Example.Manager
                 await _context.SaveChangesAsync();
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
                 //TODO log something

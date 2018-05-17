@@ -18,3 +18,4 @@ C:\Users\bsl2966\Source\Repos\MVCNetCore\Example\bin\Debug\netcoreapp2.0\Example
 C:\Users\bsl2966\Source\Repos\MVCNetCore\Example\bin\Debug\netcoreapp2.0\Example.pdb
 C:\Users\bsl2966\Source\Repos\MVCNetCore\Example\obj\Debug\netcoreapp2.0\Example.dll
 C:\Users\bsl2966\Source\Repos\MVCNetCore\Example\obj\Debug\netcoreapp2.0\Example.pdb
+C:\Users\bsl2966\Source\Repos\MVCNetCore\Example\obj\Debug\netcoreapp2.0\Example.csprojResolveAssemblyReference.cache
